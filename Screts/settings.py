@@ -25,8 +25,9 @@ SECRET_KEY = 'django-insecure-1o&@%ro-toaj-kebx856#6gz2z$!tdljwwpcm!*pl1v3k_%ydj
 # SECURITY WARNING: don't run with debug turned on in production!
 import os
 
-DEBUG = os.environ.get('DEBUG', 'False') == 'True'
-ALLOWED_HOSTS = ['*']  # O puedes dejarlo más seguro con tu dominio
+DEBUG = os.environ.get('DEBUG') == 'True'
+SECRET_KEY = os.environ.get("SECRET_KEY", "django-insecure-1o&@%ro-toaj-kebx856#6gz2z$!tdljwwpcm!*pl1v3k_%ydj")
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "*").split(",")
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
