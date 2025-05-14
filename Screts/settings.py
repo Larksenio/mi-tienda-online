@@ -77,7 +77,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 # CORS (solo desarrollo)
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = ["https://mi-tienda-frontend.onrender.com"]
 
 
 # Default primary key field type
