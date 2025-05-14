@@ -5,8 +5,9 @@ export default function CategoriaList({ selectedCategory, onSelectCategory }) {
   const [cats, setCats] = useState([]);
 
   useEffect(() => {
-    axios.get('/api/categorias/')
-      .then(res => setCats(res.data))
+    axios
+      .get(`${process.env.REACT_APP_API_BASE_URL}/api/categorias/`)
+      .then(r => setCats(r.data))
       .catch(console.error);
   }, []);
 
