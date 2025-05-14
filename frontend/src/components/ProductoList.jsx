@@ -8,11 +8,13 @@ export default function ProductoList({
 }) {
   const [productos, setProductos] = useState([]);
 
-  useEffect(() => {
-    axios.get('/api/productos/')
-      .then(res => setProductos(res.data))
-      .catch(console.error);
-  }, []);
+useEffect(() => {
+  const API = process.env.REACT_APP_API_BASE_URL;
+  axios
+    .get(`${API}/api/productos/`)
+    .then(res => setProductos(res.data))
+    .catch(console.error);
+}, []);
 
   // Filtrar por texto y por categoría
   const filtrados = productos
